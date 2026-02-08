@@ -322,7 +322,6 @@ Este projeto possui documentação extensiva para facilitar o entendimento e uso
 | [Diagramas C4](docs/C4-DIAGRAMAS.md) | Arquitetura visual completa |
 | [Guia de Implementação](docs/IMPLEMENTACAO.md) | Detalhes técnicos profundos |
 | [Exemplos de Uso](docs/EXEMPLOS-REQUISICOES.md) | cURL, Postman, Python |
-| [Testes Unitários](TESTES-UNITARIOS.md) | 83 testes implementados |
 | [Inventário TO-BE](docs/INVENTARIO-TO-BE.md) | Especificações completas |
 | [Resumo Executivo](RESUMO-EXECUTIVO.md) | Visão geral do projeto |
 
