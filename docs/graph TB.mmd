@@ -1,0 +1,32 @@
+graph TB
+    User[Usuário/Cliente]
+    Admin[Administrador]
+    
+    subgraph "Sistema de Cadastro de Clientes"
+        API[API REST<br/>Spring Boot 3.3.11<br/>Java 23<br/>:8080]
+        Worker[Worker Kafka<br/>Spring Boot 3.3.11<br/>Java 23]
+        DB[(H2 Database<br/>In-Memory)]
+        Kafka[Apache Kafka<br/>Message Broker<br/>:9092]
+        KafkaUI[Kafka UI<br/>:8090]
+        FileStorage[File System<br/>JSON Storage]
+    end
+    
+    User -->|HTTPS/JSON| API
+    Admin -->|Monitora| KafkaUI
+    Admin -->|Acessa| API
+    
+    API -->|Lê/Escreve| DB
+    API -->|Produz eventos| Kafka
+    Worker -->|Consome eventos| Kafka
+    Worker -->|Armazena em memória| Worker
+    Worker -->|Persiste JSON| FileStorage
+    KafkaUI -->|Monitora| Kafka
+    
+    style API fill:#1168bd,stroke:#0b4884,color:#ffffff
+    style Worker fill:#1168bd,stroke:#0b4884,color:#ffffff
+    style DB fill:#438dd5,stroke:#2e6295,color:#ffffff
+    style Kafka fill:#438dd5,stroke:#2e6295,color:#ffffff
+    style KafkaUI fill:#85bbf0,stroke:#5d82a8,color:#000000
+    style FileStorage fill:#438dd5,stroke:#2e6295,color:#ffffff
+    style User fill:#08427b,stroke:#052e56,color:#ffffff
+    style Admin fill:#08427b,stroke:#052e56,color:#ffffff

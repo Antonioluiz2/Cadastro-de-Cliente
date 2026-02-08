@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: cliente-worker
+  
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: cliente-worker-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+        spring.json.value.default.type: com.testetecnico.worker.dto.ClienteEventDTO
+    listener:
+      ack-mode: manual
+
+# Configurações personalizadas
+app:
+  kafka:
+    topic:
+      cliente-events: cliente-events
+  
+  worker:
+    processing:
+      delay-ms: 1000
+      enable-transformation: true
+      save-to-file: true
+      output-directory: ./data/processed
+
+logging:
+  level:
+    root: INFO
+    com.testetecnico.worker: DEBUG
+    org.springframework.kafka: INFO
