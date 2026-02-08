@@ -271,7 +271,7 @@ Cadastro de clientes/
 ├── api-rest/
 │   ├── src/
 │   │   └── main/
-│   │       ├── java/com/nexti/cliente/
+│   │       ├── java/com/testetecnico/cliente/
 │   │       │   ├── config/
 │   │       │   ├── controller/
 │   │       │   ├── domain/
@@ -284,7 +284,7 @@ Cadastro de clientes/
 ├── kafka-worker/
 │   ├── src/
 │   │   └── main/
-│   │       ├── java/com/nexti/worker/
+│   │       ├── java/com/testetecnico/worker/
 │   │       │   ├── config/
 │   │       │   ├── consumer/
 │   │       │   ├── dto/
@@ -294,18 +294,6 @@ Cadastro de clientes/
 │   └── pom.xml
 └── docker-compose.yml
 ```
-
-## 🔐 Configurações de Segurança
-
-Para ambiente de produção, considere:
-
-- Implementar autenticação (OAuth2, JWT)
-- Habilitar SSL/TLS para Kafka
-- Usar banco de dados persistente (PostgreSQL, MySQL)
-- Implementar rate limiting
-- Adicionar monitoramento (Prometheus, Grafana)
-- Configurar logs centralizados (ELK Stack)
-
 ## � Documentação Completa
 
 Este projeto possui documentação extensiva para facilitar o entendimento e uso:
@@ -334,6 +322,7 @@ Este projeto possui documentação extensiva para facilitar o entendimento e uso
 | [Diagramas C4](docs/C4-DIAGRAMAS.md) | Arquitetura visual completa |
 | [Guia de Implementação](docs/IMPLEMENTACAO.md) | Detalhes técnicos profundos |
 | [Exemplos de Uso](docs/EXEMPLOS-REQUISICOES.md) | cURL, Postman, Python |
+| [Testes Unitários](TESTES-UNITARIOS.md) | 83 testes implementados |
 | [Inventário TO-BE](docs/INVENTARIO-TO-BE.md) | Especificações completas |
 | [Resumo Executivo](RESUMO-EXECUTIVO.md) | Visão geral do projeto |
 
@@ -341,16 +330,15 @@ Este projeto possui documentação extensiva para facilitar o entendimento e uso
 
 Este projeto foi desenvolvido para fins de avaliação técnica.
 
-## 👥 Autores
 
 Sistema de Cadastro de Clientes
 
 **Versão:** 1.0.0  
 **Data:** Fevereiro 2026  
-**Status:** ✅ Produção Ready
+**Autor:** Antonio Luiz
 
 ---
 
-*Desenvolvido por Antonio Luiz - usando Java 23, Spring Boot 3.3.11 e Apache Kafka*
+*Desenvolvido por Antonio Luiz usando Java 23, Spring Boot 3.3.11 e Apache Kafka*
 ```
 
